@@ -1,0 +1,90 @@
+CREATE TABLE PersonInformation (
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT,
+    DateOfBirth DATE,
+    Gender CHAR(1) -- M or F or others
+);
+
+
+CREATE TABLE ProjectInformation (
+    ProjectID INT PRIMARY KEY,
+    ProjectName VARCHAR(100),
+    Subject VARCHAR(100),
+    Status VARCHAR(20) -- 'accepted' or 'not accepted'
+);
+
+CREATE TABLE PersonProject (
+    RollNo INT,
+    ProjectID INT,
+    PRIMARY KEY (RollNo, ProjectID),
+    FOREIGN KEY (RollNo) REFERENCES PersonInformation(RollNo),
+    FOREIGN KEY (ProjectID) REFERENCES ProjectInformation(ProjectID)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Insert into PersonInformation
+INSERT INTO PersonInformation (RollNo, Name, Age, DateOfBirth, Gender)
+VALUES 
+(1, 'Alice', 22, '2004-05-10', 'F'),
+(2, 'Bob', 23, '2003-11-23', 'M'),
+(3, 'Charlie', 21, '2005-02-17', 'M');
+
+-- Insert into ProjectInformation
+INSERT INTO ProjectInformation (ProjectID, ProjectName, Subject, Status)
+VALUES
+(101, 'AI Chatbot', 'Computer Science', 'accepted'),
+(102, 'Solar Car', 'Engineering', 'not accepted'),
+(103, 'Mobile App', 'Information Technology', 'accepted');
+
+-- Link persons to projects in PersonProject
+INSERT INTO PersonProject (RollNo, ProjectID)
+VALUES
+(1, 101),
+(2, 102),
+(3, 103),
+(1, 103); -- Alice working on two projects
+
+SELECT * FROM PersonInformation;
+
+SELECT * FROM ProjectInformation;
+
+SELECT p.ProjectID, p.ProjectName, p.Subject, p.Status
+FROM ProjectInformation p
+JOIN PersonProject pp ON p.ProjectID = pp.ProjectID
+WHERE pp.RollNo = 1;
+
+
+SELECT pi.RollNo, pi.Name, pi.Age, pi.DateOfBirth, pi.Gender
+FROM PersonInformation pi
+JOIN PersonProject pp ON pi.RollNo = pp.RollNo
+WHERE pp.ProjectID = 103;
+
+UPDATE ProjectInformation
+SET Status = 'accepted'
+WHERE ProjectID = 102;
+
+DELETE FROM PersonProject
+WHERE RollNo = 1 AND ProjectID = 103;
+
+DELETE FROM PersonProject WHERE ProjectID = 102;
+
+DELETE FROM ProjectInformation WHERE ProjectID = 102;
+
+
+DELETE FROM PersonProject WHERE RollNo = 2;
+
+DELETE FROM PersonInformation WHERE RollNo = 2;
+
+
