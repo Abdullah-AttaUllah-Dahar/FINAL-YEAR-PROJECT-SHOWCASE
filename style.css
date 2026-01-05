@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 80px;           
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background: white;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1b1b3a;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+
+.logo span {
+    color: #8b5cf6;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #8b5cf6;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.banner {
+    height: calc(100vh - 80px); 
+
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url("banner2.png");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+
+
+/* ABOUT PAGE */
+.about {
+    position: relative;              /* IMPORTANT */
+    padding: 100px 60px;
+    background: linear-gradient(135deg, #ffffff, #ede9fe);
+    overflow: hidden;                /* IMPORTANT */
+}
+
+.about h1 {
+    font-size: 40px;
+    color: #1b1b3a;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.about p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-boxes {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.box {
+    background: #f7f5ff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%;
+}
+
+.box h3 {
+    color: #8b5cf6;
+    margin-bottom: 10px;
+}
+
+/* Artistic background shapes — SAME AS CONTACT */
+.about::before,
+.about::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.about::before {
+    width: 350px;
+    height: 350px;
+    background: #8b5cf6;
+    top: -120px;
+    left: -120px;
+}
+
+.about::after {
+    width: 450px;
+    height: 450px;
+    background: #c4b5fd;
+    bottom: -150px;
+    right: -150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CONTACT SECTION */
+.contact {
+    padding: 80px 60px;
+    background: #f7f5ff;
+}
+
+.contact h1 {
+    font-size: 36px;
+    color: #1b1b3a;
+}
+
+.contact p {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* FLEX CONTAINER */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.contact-box {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.contact-box h3 {
+    margin-top: 20px;
+    color: #1b1b3a;
+}
+
+
+
+
+/* RIGHT SIDE FORM */
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #1b1b3a;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: #4b3cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+.social-links a {
+    display: inline-block;
+    margin: 8px 10px 0 0;
+    padding: 8px 16px;
+    border: 2px solid #4b3cff;   /* BLUE BORDER */
+    border-radius: 6px;
+    color: #4b3cff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #4b3cff;
+    color: #fff;
+}
+
+
+.contact {
+    position: relative;
+    padding: 100px 60px;
+    background: linear-gradient(135deg, #f7f5ff, #ede9fe);
+    overflow: hidden;
+}
+
+/* Artistic background shapes */
+.contact::before,
+.contact::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.contact::before {
+    width: 350px;
+    height: 350px;
+    background: #8b5cf6;
+    top: -120px;
+    left: -120px;
+}
+
+.contact::after {
+    width: 450px;
+    height: 450px;
+    background: #c4b5fd;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* keep content above shapes */
+.contact-box,
+.contact h1,
+.contact p {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FORM STYLING */
+form p {
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #8b5cf6;
+}
+
+/* BUTTON */
+button.nav-btn {
+    margin-top: 10px;
+}
+
+/* TABLE STYLING (View Projects) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f3f0ff;
+}

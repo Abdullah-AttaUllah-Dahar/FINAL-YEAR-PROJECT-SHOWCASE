@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services | Project Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        <img src="logo2.png" alt="Project Connect Logo">
+        <span>PROJECT</span>CONNECT
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- SERVICES SECTION -->
+<section class="contact"> <!-- reuse contact styling -->
+    <h1>Our Services</h1>
+    <p>Manage and explore student projects.</p>
+
+    <!-- ADD PROJECT -->
+    <div class="contact-box">
+        <h3>Add Project</h3>
+
+      <form action="add_project.php" method="POST">
+
+            <p>
+                <label>Project Name</label><br>
+                <input type="text" required>
+            </p>
+
+            <p>
+                <label>Date Submitted</label><br>
+                <input type="date" required>
+            </p>
+
+            <p>
+                <label>Student Name</label><br>       
+         <input type="text" name="person_name" required>
+           </p>
+
+
+
+            </p>
+
+            <p>
+                <label>Roll Number</label><br>
+                <input type="text" required>
+            </p>
+
+            <p>
+                <label>Subject</label><br>
+                <input type="text" required>
+            </p>
+
+            <p>
+<label>STATUS</label><br>
+              <select name="status">
+    <option value="Accepted">Accepted</option>
+    <option value="Not Accepted">Not Accepted</option>
+</select>
+            </p>
+
+            <button class="nav-btn" type="submit">Submit Project</button>
+        </form>
+    </div>
+
+    <br><br>
+
+    <!-- VIEW PROJECTS -->
+    <div class="contact-box">
+        <h3>View Projects</h3>
+        <p>
+            View all submitted projects along with student details and approval status.
+        </p>
+
+        <a href="#" class="nav-btn">View Project List</a>
+    </div>
+
+</section>
+
+</body>
+</html>
